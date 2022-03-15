@@ -1,0 +1,93 @@
+package Zoho;
+
+import java.util.Scanner;
+
+
+class A
+{
+
+	Scanner sc =  new Scanner(System.in);
+	public void calculate_personal() { // for calculating personal loan interest
+		
+		System.out.println("Enter the Principle amount");
+		long p_a=sc.nextLong();
+		System.out.println("rate of interest");
+		double in=sc.nextDouble();
+		System.out.println("Enter the Tenture period in year");
+		int year = sc.nextInt();
+		in=in/(12*100);
+		year=year*12;
+		double e = (p_a*in*Math.pow(1+in, year))/(Math.pow(p_a, year)-1);//for calculating EMI of using formula
+		System.out.println((int)e);
+	}
+	public void calculate_education() {// for calculating education loan interest
+		System.out.println("Enter the Principle amount");
+		long p_a=sc.nextLong();
+		System.out.println("rate of interest");
+		double in=sc.nextDouble();
+		System.out.println("Enter the Tenture period in year");
+		int year = sc.nextInt();
+		in=in/(12*100);
+		year=year*12;
+		double e = (p_a*in*Math.pow(1+in, year))/(Math.pow(p_a, year)-1);//for calculating EMI of using formula
+		System.out.println((int)e);
+
+	}
+	public void calculate_gold() {// for calculating gold loan interest
+		System.out.println("Enter the gold in gram");
+		int gold=sc.nextInt();
+		double amount = (int)gold*5123;
+		System.out.println("rate of interest");
+		double in=sc.nextDouble();
+		System.out.println("Enter the Tenture period in year");
+		int year = sc.nextInt();
+		in=in/(12*100);
+		year=year*12;
+		double e = (amount*in*Math.pow(1+in, year))/(Math.pow(amount, year)-1);//for calculating EMI of using formula
+		System.out.println((int)e);
+
+	}
+	public void calculate_Housing() {// for calculating housing loan interest
+		System.out.println("Enter the Principle amount");
+		long p_a=sc.nextLong();
+		System.out.println("rate of interest");
+		double in=sc.nextDouble();
+		System.out.println("Enter the Tenture period in year");
+		int year = sc.nextInt();
+		in=in/(12*100);
+		year=year*12;
+		double e = (p_a*in*Math.pow(1+in, year))/(Math.pow(p_a, year)-1); //for calculating EMI of using formula
+		System.out.println((int)e);
+
+	}
+}
+
+public class Code {
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in); //Scanner class getting input
+		System.out.println("Please select the bank");
+		System.out.println("1.Canara Bank \n2.State Bank of india\n3.Indian Overseas Bank"
+				+ "\n4.Punjab national bank\n5.HDFC bank");
+		int choice = sc.nextInt();
+			
+		System.out.println("Enter the Options");
+		System.out.println("1.Housing loan\n2.Education Loan\n3.Gold Loan\n4.Personal loan");	
+	    int op=sc.nextInt();
+		
+		
+		A obj = new A(); 	//Creating a object of class A
+		
+		switch(op) // using switch statement performing the operation
+		{
+		  case 1: obj.calculate_Housing(); //based on the user input operation will perform
+		            break;
+		  case 2: obj.calculate_Housing();
+          			break;
+		  case 3: obj.calculate_Housing();
+          			break;
+		  case 4: obj.calculate_Housing();
+          			break;
+		}
+	}
+}
